@@ -18,8 +18,6 @@ def read_input_file(file_path):
             right_list.append(right)
     return left_list, right_list
 
-print("habibi!")
-
 def calculate_total_distance(left_list, right_list):
     """Calculate the total distance between sorted lists."""
     left_sorted = sorted(left_list)
