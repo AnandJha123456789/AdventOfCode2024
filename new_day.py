@@ -26,16 +26,22 @@ if __name__ == "__main__":
 
 '''
 
-day_numbers = [(str(i)) for i in list(range(7,26))]
+day_numbers = [(str(i)) for i in list(range(1,26))]
 
 for day_number in day_numbers:
-    # Create the directory for the new day
-    os.makedirs(f"Day {day_number}", exist_ok=True)
+    # Create the directory for the new day if it doesn't exist
+    if not os.path.exists(f"Day {day_number}"):
+        os.mkdir(f"Day {day_number}")
+        print(f"Created directory for Day {day_number}")
 
-    # Create the input file for the new day
-    with open(f"Day {day_number}/input.txt", "w") as f:
-        pass
+    # Create the input file for the new day if it doesn't exist
+    if not os.path.exists(f"Day {day_number}/input.txt"):
+        with open(f"Day {day_number}/input.txt", "w") as f:
+            print(f"Created input file for Day {day_number}")
+            pass
 
-    # Create the main.py file for the new day
-    with open(f"Day {day_number}/day{day_number}.py", "w") as f:
-        f.write(basic_text)
+    # Create the dayn.py file for the new day if it doesn't exist
+    if not os.path.exists(f"Day {day_number}/day{day_number}.py"):
+        with open(f"Day {day_number}/day{day_number}.py", "w") as f:
+            f.write(basic_text)
+            print(f"Created day{day_number}.py for Day {day_number}")
