@@ -1,7 +1,9 @@
 # Generate a new day with all files and stuff
 import os
 
-basic_text = '''from pathlib import Path
+basic_text = '''
+from pathlib import Path
+
 def read_input_file(file_path):
     """
     Reads the input file and returns the grid as a list of lists.
@@ -24,15 +26,16 @@ if __name__ == "__main__":
 
 '''
 
-day_number = input("Enter the day number: ")
+day_numbers = [(str(i)) for i in list(range(7,26))]
 
-# Create the directory for the new day
-os.makedirs(f"Day {day_number}", exist_ok=True)
+for day_number in day_numbers:
+    # Create the directory for the new day
+    os.makedirs(f"Day {day_number}", exist_ok=True)
 
-# Create the input file for the new day
-with open(f"Day {day_number}/input.txt", "w") as f:
-    pass
+    # Create the input file for the new day
+    with open(f"Day {day_number}/input.txt", "w") as f:
+        pass
 
-# Create the main.py file for the new day
-with open(f"Day {day_number}/day{day_number}.py", "w") as f:
-    f.write(basic_text)
+    # Create the main.py file for the new day
+    with open(f"Day {day_number}/day{day_number}.py", "w") as f:
+        f.write(basic_text)
