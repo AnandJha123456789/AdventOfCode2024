@@ -1,8 +1,8 @@
 # Generate a new day with all files and stuff
 import os
 
-basic_text = '''
-from pathlib import Path
+basic_text = '''from pathlib import Path
+import subprocess
 
 def read_input_file(file_path):
     """
@@ -15,6 +15,9 @@ def main():
     """
     Main function to compute solutions for Part 1 and Part 2.
     """
+    # Clear the terminal
+    subprocess.run(["cls"], shell=True)
+
     # Define the input file path
     input_file = Path(__file__).parent / 'input.txt'
 
@@ -26,7 +29,7 @@ if __name__ == "__main__":
 
 '''
 
-day_numbers = [(str(i)) for i in list(range(1,26))]
+day_numbers = [(str(i)) for i in list(range(10,26))]
 
 for day_number in day_numbers:
     # Create the directory for the new day if it doesn't exist

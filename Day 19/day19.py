@@ -1,5 +1,5 @@
-
 from pathlib import Path
+import subprocess
 
 def read_input_file(file_path):
     """
@@ -12,6 +12,9 @@ def main():
     """
     Main function to compute solutions for Part 1 and Part 2.
     """
+    # Clear the terminal
+    subprocess.run(["cls"], shell=True)
+
     # Define the input file path
     input_file = Path(__file__).parent / 'input.txt'
 
